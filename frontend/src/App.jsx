@@ -3,6 +3,7 @@ import {
    Route
 } from "react-router-dom";
 
+import ProtectedRoute from "./routes/ProtectedRoute";
 import Navbar from "./components/Navbar";
 
 import Home from "./pages/Home";
@@ -33,9 +34,13 @@ const App = () => {
             />
 
             <Route
-               path="/bookmarks"
-               element={<Bookmarks />}
-            />
+   path="/bookmarks"
+   element={
+      <ProtectedRoute>
+         <Bookmarks />
+      </ProtectedRoute>
+   }
+/>
 
          </Routes>
       </>
