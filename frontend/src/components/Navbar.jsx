@@ -13,33 +13,56 @@ const Navbar = () => {
 
    return (
 
-      <nav className="bg-black text-white p-4 flex justify-between">
+      <nav className="bg-black text-white p-4 flex justify-between items-center">
 
-         <Link to="/">
+         <Link
+            to="/"
+            className="font-bold text-xl hover:text-gray-300"
+         >
             Hacker News
          </Link>
 
-         <div className="flex gap-4">
+         <div className="flex gap-4 items-center">
 
             {user ? (
                <>
-                  <Link to="/bookmarks">
+
+                  <span>
+                     Hi, {user.name}
+                  </span>
+
+                  <Link
+                     to="/bookmarks"
+                     className="hover:text-gray-300"
+                  >
                      Bookmarks
                   </Link>
 
-                  <button onClick={logout}>
+                  <button
+                     onClick={logout}
+                     className="hover:text-gray-300"
+                  >
                      Logout
                   </button>
+
                </>
             ) : (
                <>
-                  <Link to="/login">
+
+                  <Link
+                     to="/login"
+                     className="hover:text-gray-300"
+                  >
                      Login
                   </Link>
 
-                  <Link to="/register">
+                  <Link
+                     to="/register"
+                     className="hover:text-gray-300"
+                  >
                      Register
                   </Link>
+
                </>
             )}
 

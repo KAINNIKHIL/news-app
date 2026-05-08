@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 import {
    useState
 } from "react";
@@ -51,14 +53,14 @@ const Register = () => {
             response.data.token
          );
 
-         navigate("/");
+         toast.success("Registration successful");
 
       } catch (error) {
 
-         alert(
-            error.response?.data?.message ||
-            "Something went wrong"
-         );
+         toast.error(
+   error.response?.data?.message ||
+   "Something went wrong"
+);
 
       } finally {
 

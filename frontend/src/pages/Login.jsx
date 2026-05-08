@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 import {
    useState
 } from "react";
@@ -49,15 +51,15 @@ const Login = () => {
             response.data.user,
             response.data.token
          );
-
+         toast.success("Login successful");
          navigate("/");
 
       } catch (error) {
 
-         alert(
-            error.response?.data?.message ||
-            "Something went wrong"
-         );
+         toast.error(
+   error.response?.data?.message ||
+   "Something went wrong"
+);
 
       } finally {
 
